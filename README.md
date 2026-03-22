@@ -5,7 +5,7 @@ Give your AI agents **the minimum permission they need**. No more, no less.
 ## 🚀 Quick Start (5 minutes)
 
 ```bash
-git clone https://github.com/yourusername/capkit.git
+git clone https://github.com/iamGodofall/capkit.git
 cd capkit
 npm install
 npm run demo  # See it work!
@@ -25,7 +25,8 @@ CapKit issues **cryptographically signed, time-bound capabilities**:
 
 ## Security Model
 
-```
+```type
+
 Threat Model:
 1. Agent prompt injection → Capability stays scoped
 2. Key compromise → Time-bound limits damage  
