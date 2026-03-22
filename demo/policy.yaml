@@ -1,0 +1,9 @@
+version: "1.0"
+rules:
+  - name: twitter-post
+    action: post
+    resource: /twitter
+    conditions:
+      maxContentLength: 280
+      expiresIn: '10m'
+      maxUses: 5
