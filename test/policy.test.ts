@@ -2,7 +2,7 @@ import { loadPolicy, checkPolicy } from '../src/index';
 import * as fs from 'fs';
 import * as path from 'path';
 
-const policyPath = path.join(__dirname, '../demo/policy.yaml');
+const policyPath = path.join(__dirname, 'temp-policy.yaml');
 
 describe('Policy', () => {
   let policy: any;
