@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.checkPolicy = exports.loadPolicy = exports.logAction = exports.verifyCapability = exports.issueCapability = void 0;
+var capability_1 = require("./capability");
+Object.defineProperty(exports, "issueCapability", { enumerable: true, get: function () { return capability_1.issueCapability; } });
+Object.defineProperty(exports, "verifyCapability", { enumerable: true, get: function () { return capability_1.verifyCapability; } });
+Object.defineProperty(exports, "logAction", { enumerable: true, get: function () { return capability_1.logAction; } });
+var policy_1 = require("./policy");
+Object.defineProperty(exports, "loadPolicy", { enumerable: true, get: function () { return policy_1.loadPolicy; } });
+Object.defineProperty(exports, "checkPolicy", { enumerable: true, get: function () { return policy_1.checkPolicy; } });

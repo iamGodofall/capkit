@@ -1,0 +1,38 @@
+{
+  "name": "capkit",
+  "version": "0.1.0",
+  "description": "Capability Kit for AI Agents - Scoped, time-bound, signed permissions",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+"test": "jest --config jest.config.js",
+    "demo": "ts-node demo/agent-example.ts",
+    "dev": "ts-node demo/agent-example.ts"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "security",
+    "capabilities",
+    "permissions"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.0.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  }
+}
