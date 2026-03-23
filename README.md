@@ -63,6 +63,16 @@ if (verifyCapability({ capability: cap, key: 'your-secret-key' }).valid) {
 }
 ```
 
+---
+
+**Part of the Agent Builder Suite**  
+→ [capkit](https://github.com/iamGodofall/capkit): Scoped capabilities for agents  
+→ [quickbench](https://github.com/iamGodofall/quickbench): Reproducible agent evaluation  
+→ [edge-run](https://github.com/iamGodofall/edge-run): Offline-first orchestration *(coming soon)*  
+→ [connector-starter](https://github.com/iamGodofall/connector-starter): Generate adapters fast *(coming soon)*
+
+*Built for builders who ship. MIT licensed. Local-first by design.*
+
 ## License
 
 MIT
