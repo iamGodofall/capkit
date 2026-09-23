@@ -17,7 +17,7 @@
     "capabilities",
     "permissions"
   ],
-  "author": "",
+  "author": "Themba Enock Mpehle / Enock Labs",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.14",
@@ -29,7 +29,6 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "capkit": "^0.5.22",
     "js-yaml": "^4.1.1"
   },
   "jest": {
