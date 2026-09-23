@@ -85,4 +85,30 @@ describe('Capability', () => {
     expect(receipt.receipt).toBeDefined();
     expect(receipt.receipt.length).toBeGreaterThan(0);
   });
+  test('should reject malformed signature without throwing', () => {
+    const cap = issueCapability({
+      action: 'post',
+      resource: '/test',
+      key: SECRET_KEY,
+      expiresIn: '1h'
+    });
+    cap.signature = '00';
+
+    expect(() => verifyCapability({ capability: cap, key: SECRET_KEY })).not.toThrow();
+    expect(verifyCapability({ capability: cap, key: SECRET_KEY }).valid).toBe(false);
+  });
+
+  test('should reject a capability whose lifetime is malformed', () => {
+    const cap = issueCapability({
+      action: 'post',
+      resource: '/test',
+      key: SECRET_KEY,
+      expiresIn: '1h'
+    });
+    cap.payload.expiresAt = cap.payload.issuedAt;
+
+    const result = verifyCapability({ capability: cap, key: SECRET_KEY });
+    expect(result.valid).toBe(false);
+    expect(result.reason).toContain('lifetime');
+  });
 });
