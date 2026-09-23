@@ -108,8 +108,17 @@ export function verifyCapability(options: VerifyOptions): VerificationResult {
     capability = options.capability;
   }
 
+  if (!capability || !capability.payload || typeof capability.signature !== 'string') {
+    return { valid: false, reason: 'Invalid capability structure' };
+  }
+
+  const { issuedAt, expiresAt } = capability.payload;
+  if (!Number.isSafeInteger(issuedAt) || !Number.isSafeInteger(expiresAt) || expiresAt <= issuedAt) {
+    return { valid: false, reason: 'Invalid capability lifetime' };
+  }
+
   const now = Date.now();
-  if (now > capability.payload.expiresAt) {
+  if (now >= expiresAt) {
     return { valid: false, reason: 'Capability expired' };
   }
 
@@ -120,10 +129,15 @@ export function verifyCapability(options: VerifyOptions): VerificationResult {
     .update(payloadString)
     .digest('hex');
 
-  if (!timingSafeEqual(
-    Buffer.from(capability.signature, 'hex'),
-    Buffer.from(expectedSignature, 'hex')
-  )) {
+  let suppliedSignature: Buffer;
+  try {
+    suppliedSignature = Buffer.from(capability.signature, 'hex');
+  } catch {
+    return { valid: false, reason: 'Invalid signature encoding' };
+  }
+
+  const expected = Buffer.from(expectedSignature, 'hex');
+  if (suppliedSignature.length !== expected.length || !timingSafeEqual(suppliedSignature, expected)) {
     return { valid: false, reason: 'Invalid signature' };
   }
 
