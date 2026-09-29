@@ -83,7 +83,7 @@ MIT
 
 Everything here is built indie — no VC money, no marketing budget. If this project saves you time or you believe in local-first, sovereign software, fuel the work:
 
-[**Buy Me a Coffee**](https://www.buymeacoffee.com/enockgames) · [**PayPal**](https://paypal.me/enocklabs)
+[**Buy Me a Coffee**](https://www.buymeacoffee.com/enockgames) · [**PayPal**](https://paypal.me/ABSuite?locale.x=en_US&country.x=ZA)
 
 Every contribution goes into development time and keeping these tools free & MIT-licensed.
 
